@@ -1,0 +1,21 @@
+{{extend 'layout.html'}}
+
+{{if 'tabla' in globals():}}
+<h1>{{=tabla.replace('mv_','').upper()}}</h1>
+
+{{else:}}
+
+<h1>{{=T("Movimientos")}}</h1>
+
+{{pass}}
+
+<hr/>
+
+{{=form}}
+
+{{if 'grid2' in globals():}}
+<br>
+<h2>Items</h2>
+<hr/>
+{{=grid2}}
+{{pass}}

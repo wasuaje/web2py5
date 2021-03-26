@@ -1,0 +1,35 @@
+{{extend 'layout.html'}}
+
+
+<h2>Actualizacion de Facturas</h2> {{=printform}}
+<hr/>
+</br>
+
+{{if 'grid' in globals():}}
+{{=grid}}
+{{pass}}
+
+{{if 'form' in globals():}}
+{{=form}}
+{{pass}}
+
+</br>
+<h2>agregar Detalle</h2>
+<hr/>
+</br>
+
+{{if 'frmdet' in globals():}}
+{{=frmdet}}
+{{pass}}
+
+</br>
+<h2>Detalle</h2>
+<hr/>
+</br>
+<div id='target'>
+
+{{if 'lineas' in globals():}}
+{{=lineas}}
+{{pass}}
+     
+</div> 

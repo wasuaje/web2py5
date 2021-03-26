@@ -1,0 +1,6 @@
+Agregar z-index=950
+en datepicker de este css para que funcione calendario
+Esta dentro jqplugin, black darkness o algo asi
+jquery-ui-1.8.1.custom.css
+
+BAJAR el ULTIMO jquery.jqgrid y reemplazar el actual

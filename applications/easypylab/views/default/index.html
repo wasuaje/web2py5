@@ -1,0 +1,37 @@
+{{extend 'layout.html'}}
+
+   <div class="post greenbox">
+			<div class="title">
+				<h1>Menu</h1>
+			</div>
+			
+			<div class="img"> 
+			{{=A(IMG(_src=URL('static/images','config2.jpeg'), _alt="Empresa, usuarios y parametros",  _width="80", _height="80", _class="none"), callback=URL('default','config'), target="modulos" ) }}			
+			<p><center><strong>Configuracion</strong></center>
+			</div>
+			
+			<div class="img"> 
+			{{=A(IMG(_src=URL('static/images','calculos.jpg'), _alt="caja,bancos,formas de pago,documentos,etc",  _width="80", _height="80", _class="none"), callback=URL('default','maestra'), target="modulos") }}	
+			<p><center><strong>Maestras</strong></center>
+			</div>				
+			
+			<div class="img">
+		    {{=A(IMG(_src=URL('static/images','monitor2.jpeg'), _alt="Punto de venta,comanda,inventario,corbos,pagos",  _width="80", _height="80", _class="none"),  callback=URL('default','modulos'), target="modulos") }}	
+			<p><center><strong>Modulos</strong></center>
+			</div>
+			
+			<div class="img">
+			{{=A(IMG(_src=URL('static/images','graficos.jpeg'), _alt="Reportes del sistema por categoria",  _width="80", _height="80", _class="none"), _href=URL('default','reportes')) }}
+			<p><center><strong>Reportes</strong></center>			
+										
+
+			</div>
+
+
+			</br></br></br></br></br></br></br></br></br>
+	</div>
+ 
+ <div id="modulos"  class="post greenboxmods" style="width:550px;">
+
+ </div>
+

@@ -1,0 +1,25 @@
+{{extend 'layout.html'}}
+
+{{if 'tabla' in globals():}}
+<h1>{{=tabla.replace('mv_','').upper()}}</h1>
+
+{{else:}}
+
+<h1>{{=T("Movimientos")}}</h1>
+
+{{pass}}
+
+<hr/>
+<h2></h2>
+
+{{if 'grid' in globals():}}
+{{=grid}}
+
+{{else:}}
+
+<br>
+Solicitud de Servicios ({{=A('Ver',_href=URL(c='movimientos',r=request,args=['mv_solicitud']))}} - {{=A('Buscar',_href=URL(c='movimientos',r=request,args=['mv_solicitud'],f='search'))}}) <br>
+Asignacion de Vehiculo ({{=A('Ver',_href=URL(c='movimientos',r=request,args=['mv_asignacion'],f='index'))}} - {{=A('Buscar',_href=URL(c='movimientos',r=request,args=['mv_asignacion'],f='search'))}}) <br>
+Viajes (Requiere solicitud) ({{=A('Ver',_href=URL(c='movimientos',r=request,args=['mv_viaje'],f='index'))}} - {{=A('Buscar',_href=URL(c='movimientos',r=request,args=['mv_viaje'],f='search'))}}) <br>
+
+{{pass}}

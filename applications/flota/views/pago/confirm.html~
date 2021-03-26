@@ -1,0 +1,20 @@
+{{extend 'layout.html'}}
+
+
+<h2>Seleccion de viajes a pagar </h2> 
+<hr/>
+</br>
+
+{{if 'grid' in globals():}}
+{{=grid}}
+{{pass}}
+
+
+{{if 'lineas' in globals():}}
+</br>
+<h2>Servicios a pagar</h2>
+<hr/>
+</br>
+{{=lineas}}
+{{pass}}
+

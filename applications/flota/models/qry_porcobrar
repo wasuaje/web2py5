@@ -1,0 +1,9 @@
+SELECT cf_proveedor_id, cf_proveedor.razon_social,fc_documento.fecha,
+    fc_documento.fecha_vencimiento,DATEDIFF(CURDATE(),
+    fc_documento.fecha_vencimiento) dias,
+    (select sum(total) from fc_documento_det where fc_documento_det.fc_documento_id=fc_documento.id) total,
+    (select sum(monto) from fc_cobro_det where fc_cobro_det.fc_documento_id=fc_documento.id) cobrado
+FROM fc_documento
+inner join cf_proveedor on fc_documento.cf_proveedor_id=cf_proveedor.id
+where fc_documento.fc_tipo_doc_id=2
+;

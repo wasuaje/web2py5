@@ -1,0 +1,83 @@
+{{extend 'layout.html'}}
+
+{{if 'tabla' in globals():}}
+{{if tabla == 'mt_doc_persona': titulo='Documentos de Persona' }}
+{{if tabla == 'mt_doc_vehiculo': titulo='Documentos de vehiculo' }}
+{{if tabla == 'cf_empresa': titulo='Datos de la Empresa' }}
+{{if tabla == 'mt_estado': titulo='Estados del pais' }}
+{{if tabla == 'mt_ciudad': titulo='Ciudades registradas' }}
+{{if tabla == 'cf_proveedor': titulo='Registro de Proveedores' }}
+<h1>{{=titulo.upper()}}</h1>
+{{else:}}
+<h1>{{=T("Archivos Maestros")}}</h1>
+{{pass}}
+
+<hr />
+<h2></h2>
+{{if 'form' in globals():}}
+
+{{=form}}
+
+<br>
+
+
+{{if tipo == 'listaveh' :}}
+{{for i in lista:}}
+{{=A(i.cf_vehiculo_marca.nombre+' - '+i.cf_vehiculo_modelo.nombre+' - '+i.mt_vehiculo.placa,_href=URL(c='maestros',r=request,args=[tabla,i.mt_vehiculo.id],f='index'))}} <br>	
+{{pass}}
+{{pass}}
+
+{{if tipo == 'listaemp' :}}
+{{for i in lista:}}
+{{=A(i.nombre,_href=URL(c='maestros',r=request,args=[tabla,i.id],f='index'))}} <br>	
+{{pass}}
+{{pass}}
+
+{{if tipo == 'proveedor' :}}
+{{for i in lista:}}
+{{=A(i.nombre,_href=URL(c='maestros',r=request,args=[tabla,i.id],f='index'))}} <br>	
+{{pass}}
+{{pass}}
+
+{{if tipo == 'listakilo' :}}
+{{for i in lista:}}
+	{{=A(i.mt_vehiculo.placa+'  | '+str(i.mt_kilometraje.fecha),_href=URL(c='maestros',r=request,args=[tabla,i.mt_kilometraje.id],f='index'))}} <br>	
+{{pass}}
+{{pass}}
+
+{{if  tipo == 'listciudad' :}}
+{{for i in lista:}}
+{{=A(i.mt_estado.nombre+' - '+i.mt_ciudad.nombre,_href=URL(c='maestros',r=request,args=[tabla,i.mt_ciudad.id],f='index'))}} <br>
+{{pass}}
+{{pass}}
+
+{{if  tipo == 'listestado' :}}
+{{for i in lista:}}
+{{=A(i.nombre,_href=URL(c='maestros',r=request,args=[tabla,i.id],f='index'))}} <br>
+{{pass}}
+{{pass}}
+
+{{if  tipo == 'listper' :}}
+{{for i in lista:}}
+{{=A(i.mt_persona.cedula+' - '+i.mt_persona.nombres+' - '+i.mt_persona.apellidos,_href=URL(c='maestros',r=request,args=[tabla,i.mt_persona.id],f='index'))}} <br>
+{{pass}}
+{{pass}}
+
+{{if tipo ==  'listdocs' :}}
+{{for i in lista:}}
+{{=A(i.numero,_href=URL(c='maestros',r=request,args=[tabla,i.id],f='index'))}} <br>
+{{pass}}
+{{pass}}
+
+
+{{else:}}
+
+{{for h in tablas:}}
+{{if h in ('mt_estado','mt_ciudad','mt_doc_vehiculo','mt_doc_persona','cf_empresa','cf_proveedor') :}}	
+	{{=A(h.replace('cf_','').replace('mt_','').upper(),_href=URL(c='maestros',r=request,args=[h],f='index'))}} <br>
+	{{pass}}
+{{pass}}
+{{pass}}
+
+
+

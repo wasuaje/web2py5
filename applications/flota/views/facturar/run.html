@@ -1,0 +1,31 @@
+{{extend 'layout.html'}}
+
+<h2>Confirme Facturacion</h2>
+<hr/>
+</br>
+
+{{if 'lista' in globals():}}
+{{=lista}}
+{{else:}}
+{{pass}}
+
+</br>
+<h2>Detalle</h2>
+<hr/>
+</br>
+
+{{if 'listadet' in globals():}}
+{{=listadet}}
+{{else:}}
+{{pass}}
+
+</br>
+<h2>Adicionales</h2>
+<hr/>
+</br>
+
+{{if 'form' in globals():}}
+{{=form}}
+{{else:}}
+{{pass}}
+

@@ -1,0 +1,16 @@
+{{extend 'layout.html'}}
+
+
+{{if 'titulo' in globals():}}
+<h1>{{=titulo}} </h1>
+		{{if 'valor' in globals():}}
+		{{=A('Ver en pdf',_href=URL(c='reportes',r=request,args=[tabla,valor],f='impresion.pdf'))}} <br>
+		{{else:}}
+		{{=A('Ver en pdf',_href=URL(c='reportes',r=request,args=[tabla],f='impresion.pdf'))}} <br>
+		{{pass}}
+{{pass}}
+
+<hr />
+<h2></h2>
+{{=table}}
+

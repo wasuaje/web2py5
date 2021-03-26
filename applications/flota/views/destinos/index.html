@@ -1,0 +1,15 @@
+{{extend 'layout.html'}}
+     <script type='text/javascript'>
+     $(document).ready(function(){
+     cargarLista();        
+     function cargarLista(){
+     $('#target').load('lista');
+    }
+     })
+  </script>
+
+   <INPUT type="text"  name="q"  />
+   <INPUT type="button" value="submit" onclick="ajax('{{=URL('lista')}}',['q'],'target');"/><br/>  
+     <div id='target'>
+     
+    </div> 

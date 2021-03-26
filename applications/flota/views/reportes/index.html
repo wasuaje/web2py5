@@ -1,0 +1,18 @@
+{{extend 'layout.html'}}
+
+
+
+{{if 'tabla' in globals():}}
+<h1>{{=tabla.replace('cf_','').upper()}}</h1>
+{{else:}}
+<h1>{{=T("Reportes Disponibles")}}</h1>
+{{pass}}
+
+
+<hr />
+<h2></h2>
+
+{{=A('Configuraciones'.upper(),_href=URL(c='reportes',r=request,f='configs'))}} <br>
+{{=A('Maestros'.upper(),_href=URL(c='reportes',r=request,f='maestros'))}} <br>
+{{=A('Movimientos'.upper(),_href=URL(c='reportes',r=request,f='movitos'))}} <br>
+{{=A('Gastos'.upper(),_href=URL(c='reportes',r=request,f='gastos'))}} <br>

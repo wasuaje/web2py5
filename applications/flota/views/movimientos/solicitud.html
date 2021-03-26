@@ -1,0 +1,16 @@
+{{extend 'layout.html'}}
+
+
+<h1>{{=T("Solicitudes")}}</h1>
+
+
+
+<hr />
+<h2></h2>
+
+<br>
+{{=A('Nueva Solicitud',_href=URL(c='movimientos',r=request,args=['mv_solicitud'],f='solicitud'))}} <br>
+{{=A('Nueva Asignacion',_href=URL(c='movimientos',r=request,args=['mv_asignacion'],f='asignacion'))}} <br>
+{{=A('Nuevo Viaje',_href=URL(c='movimientos',r=request,args=['mv_viaje'],f='viaje'))}} <br>
+
+

@@ -1,0 +1,52 @@
+{{extend 'layout.html'}}
+
+   <div class="post greenbox">
+			<div class="title">
+				<h1>Productos</h1>
+			</div>
+			<table id="list10"></table> <div id="pager10"></div>
+			<input type="BUTTON" id="bedata2" value="Add Record" />
+			<input type="BUTTON" id="bedata" value="Edit Selected" />			
+			
+	</div>
+ <div id="modulos"  class="post greenbox">
+  {{=A(" <<- Volver" , _href=URL('default','index')  )  }}       
+   </div>
+
+   
+<script type="text/javascript">
+jQuery("#list10").jqGrid({ 
+		url:'{{=URL('producto','getdata')}}', 
+		datatype: "json", 
+		height:300,
+		colNames:['id','Codigo','Nombre','Categoria','Mostar en Menu'], 
+		colModel:[ {name:'id',index:'id', width:20},  
+			 {name:'codigo',index:'codigo', width:85, sopt:['eq','ne','bw','cn']},
+			 {name:'nombre',index:'nombre', width:250}, 
+			 {name:'categoria',index:'categoria', width:235}, 
+			  {name:'show_in_menu',index:'show_in_menu', width:130}, 			  
+			 ], 	   		
+		rowNum:13	, 		
+		rowList:[10,20,30,50,100], 
+		pager: '#pager10', 
+		sortname: 'id', 
+		viewrecords: true, 		
+		sortorder: "desc", 
+		multiselect: false
+		 });
+jQuery("#list10").jqGrid('navGrid','#pager10',{add:false,edit:false,del:false,search:true}); 
+
+$("#bedata").click(function(){
+   var gr = jQuery("#list10").jqGrid('getGridParam','selrow'); 					  
+   if( gr != null )    
+	 window.location.href = " {{=URL('producto','handle' )}}/"+gr ;
+   else 
+     alert("Please Select Row"); });
+
+
+$("#bedata2").click(function(){   
+	window.location.href = '{{=URL('producto','handle')}}';
+}) ;
+// usar esto para recargar el grid luego de un insert o algo
+//$("#list10").trigger("reloadGrid"); 
+</script>

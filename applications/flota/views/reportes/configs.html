@@ -1,0 +1,26 @@
+{{extend 'layout.html'}}
+
+
+
+{{if 'tabla' in globals():}}
+<h1>{{=tabla.replace('cf_','').upper()}}</h1>
+{{else:}}
+<h1>{{=T("Reportes Disponibles")}}</h1>
+{{pass}}
+
+<hr />
+<h2></h2>
+
+{{if 'form' in globals():}}
+(En blanco para buscar todos)
+{{=form }} 
+{{else:}}
+	{{for h in tablas:}}
+		{{if 'cf_' in h and 'empresa' not in h:}}
+		{{=A(h.replace('cf_','').replace('mt_','').upper(),_href=URL(c='reportes',r=request,args=[h],f='configs'))}} <br>
+		{{pass}}
+	{{pass}}
+{{pass}}
+
+
+

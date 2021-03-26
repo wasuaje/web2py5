@@ -1,0 +1,19 @@
+'Comprobante.L';'T';51.10;17.90;126.10;31.70;'Arial';16.00;0;0;0;0;0;'C';'Reporte de cuentas por cobrar al:';2
+'EMPRESA';'T';43.40;0.90;141.40;5.90;'Arial';12.00;1;0;0;0;0;'I';'';2
+'Fecha';'T';99.70;21.10;139.70;28.10;'Arial';16.00;0;0;0;0;65535;'I';None;0
+'Linea2';'L';18.60;39.80;188.60;39.80;None;0.00;0;0;0;0;0;'I';None;3
+'Linea4';'L';18.60;48.40;188.60;48.40;None;0.00;0;0;0;0;0;'I';None;3
+'Linea6';'L';15.40;230.40;185.40;230.40;None;0.00;0;0;0;0;0;'I';None;3
+'Linea8';'L';61.08;48.40;61.08;229.70;None;0.00;0;0;0;0;0;'I';None;3
+'Linea8_copy';'L';36.70;48.40;36.88;230.10;None;0.00;0;0;0;0;0;'I';None;3
+'Logo';'I';17.60;0.60;42.30;16.70;None;0.00;0;0;0;0;0;'I';'logo';2
+'MEMBRETE1';'T';43.40;6.20;111.40;11.20;'Arial';10.00;0;0;0;0;0;'I';'';2
+'MEMBRETE2';'T';43.40;11.60;111.40;16.60;'Arial';10.00;0;0;0;0;0;'I';'';2
+'page';'T';163.10;0.90;209.30;5.90;'Arial';6;False;False;False;0;16777215;'L';'page';0
+'proveedor.l';'T';18.30;40.30;36.30;46.30;'Arial';10.00;0;0;0;0;0;'l';'Proveedor: ';0
+'proveedor.nombre';'T';37.80;40.60;177.80;46.60;'Arial';10.00;0;0;0;0;65535;'I';None;0
+'some_name';'T';40.90;34.10;56.50;39.10;'Arial';12;False;False;False;0;16777215;'L';'Fact. Nro';0
+'some_name_copy';'T';68.40;34.40;84.00;39.40;'Arial';12;False;False;False;0;16777215;'L';'Fecha';0
+'some_name_copy_copy';'T';93.20;34.40;112.80;39.40;'Arial';12;False;False;False;0;16777215;'l';'Vencimiento';0
+'some_name_copy_copy_copy';'T';123.40;34.40;146.60;39.40;'Arial';12;False;False;False;0;16777215;'l';'Nro. Dias Venc.';0
+'some_name_copy_copy_copy_copy';'T';160.10;34.30;183.30;39.30;'Arial';12;False;False;False;0;16777215;'l';'Monto';0

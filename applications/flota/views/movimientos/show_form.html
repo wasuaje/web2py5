@@ -1,0 +1,24 @@
+{{extend 'layout.html'}}
+
+{{if 'tabla' in globals():}}
+<h1>{{=tabla.replace('mv_','').upper()}}</h1>
+
+{{else:}}
+
+<h1>{{=T("Movimientos")}}</h1>
+
+{{pass}}
+
+<hr/>
+<h2></h2>
+
+
+{{if 'form' in globals():}}
+<!--<form>
+ Cedula de Identidad  <input id="persona" name="persona" onblur="ajax('{{=URL(c='movimientos',f='get_persona')}}', ['persona'], 'target'); " />  <b><span id="target" _onclick="jQuery('#mv_solicitud_mt_persona_id').val(999);" > </span></b>
+ <input type='hidden' value='' name='persona_id'>
+</form>
+-->
+{{=form}}
+
+{{pass}}

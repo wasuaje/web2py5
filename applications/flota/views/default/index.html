@@ -1,0 +1,28 @@
+{{left_sidebar_enabled=right_sidebar_enabled=False}}
+{{extend 'layout.html'}}
+
+{{if 'message' in globals():}}
+
+<h1>{{=T("Bienvenido a Flota Control")}}</h1>
+
+<hr />
+<h2>{{=T("Caracteristicas principales:")}}</h2>
+<br>
+<ul>
+  <li>{{=T('Configuracion de utiles parametros')}}</li>
+  <li>{{=T('Registro de data importante de choferes y vehiculos')}}</li>
+  <li>{{=T('Controle la documentacion requerida')}}</li>
+  <li>{{=T("Agradable interfaz administrativa")}}</li>
+  
+</ul>
+
+<ol>
+  <li>{{=T('Usted se encuentra ahora en la url')}} {{=A(request.env.path_info,_href=request.env.path_info)}}</li>
+</ol>
+
+{{else:}}
+{{=BEAUTIFY(response._vars)}}
+{{pass}}
+
+<!--{{block left_sidebar}}New Left Sidebar Content{{end}}
+{{block right_sidebar}}New Right Sidebar Content{{end}}-->

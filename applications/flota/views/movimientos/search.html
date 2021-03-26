@@ -1,0 +1,27 @@
+{{extend 'layout.html'}}
+
+{{if 'tabla' in globals():}}
+<h1>{{=tabla.replace('mv_','').upper()}}</h1>
+
+{{else:}}
+
+<h1>{{=T("Movimientos")}}</h1>
+
+{{pass}}
+
+<hr/>
+<h2></h2>
+
+{{if 'frmsearch' in globals():}}
+<br><br><b>Busqueda de Solicitudes:</b> <br>
+{{=frmsearch}}
+{{pass}}
+
+
+{{if 'lista' in globals():}}
+<br><br><b>Solicitudes encontradas:</b> <br>
+{{for i in lista:}}
+{{=A(i.descripcion,_href=URL(c='movimientos',r=request,args=[tabla,i.id],f='show_form'))}} <br>
+{{pass}}
+{{pass}}
+

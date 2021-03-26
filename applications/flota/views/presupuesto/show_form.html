@@ -1,0 +1,47 @@
+{{extend 'layout.html'}}
+<script>
+var miPopup
+function abreVentana(){
+	var cantidad=$('#cant').val();	
+    miPopup = window.open("{{=URL(c='servicio', f='index'+funcion)}}"+'/0/'+cantidad,"Tarifas y Servicios","width=600,height=500,scrollbars=yes")
+    miPopup.focus()
+}
+
+function cierra()
+{
+ cargarLista();
+ miPopup.close();
+}
+</script>
+<h2>Actualizacion de Presupuestos </h2> {{=printform}}
+<hr/>
+</br>
+
+{{if 'grid' in globals():}}
+{{=grid}}
+{{pass}}
+
+{{if 'form' in globals():}}
+{{=form}}
+{{pass}}
+
+</br>
+<!--
+<h2>agregar Detalle</h2>
+<hr/>
+</br>
+
+{{if 'frmdet' in globals():}}
+{{=frmdet}}
+{{pass}}
+-->
+{{if 'lineas' in globals() and lineas<>'': }}
+</br>
+<h2>Detalle</h2> <input type='text' size='3' value='1' name='cant' id='cant' > <input type='button' value='añadir' class='link' onclick="abreVentana()" > 
+<hr/>
+</br>
+<div id='target'>
+{{=lineas}}
+{{pass}}
+     
+</div> 

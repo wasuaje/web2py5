@@ -1,0 +1,31 @@
+'Comprobante.L';'T';51.10;17.90;126.10;31.70;'Arial';16.00;0;0;0;0;0;'C';'Reporte de cuentas por cobrar al:';2
+'EMPRESA';'T';43.40;0.90;141.40;5.90;'Arial';12.00;1;0;0;0;0;'I';'';2
+'Fecha';'T';99.70;21.10;139.70;28.10;'Arial';16.00;0;0;0;0;65535;'I';None;0
+'Linea2';'L';36.30;39.85;188.60;39.85;None;0.00;0;0;0;0;0;'I';None;3
+'Linea4';'L';36.90;48.40;188.60;48.40;None;0.00;0;0;0;0;0;'I';None;3
+'Linea6';'L';36.70;250.55;188.50;250.55;None;0.00;0;0;0;0;0;'I';None;3
+'Linea6_copy';'L';36.10;258.40;191.40;258.40;None;0.00;0;0;0;0;0;'I';None;3
+'Linea8';'L';61.08;48.40;61.08;250.90;None;0.00;0;0;0;0;0;'I';None;3
+'Linea8_copy';'L';36.70;48.40;36.70;250.70;None;0.00;0;0;0;0;0;'I';None;3
+'Linea8_copy';'L';88.28;48.60;88.28;251.10;None;0.00;0;0;0;0;0;'I';None;3
+'Linea8_copy';'L';118.47;48.40;118.47;250.90;None;0.00;0;0;0;0;0;'I';None;3
+'Linea8_copy';'L';154.07;48.60;154.07;251.10;None;0.00;0;0;0;0;0;'I';None;3
+'Linea8_copy';'L';188.47;48.60;188.47;251.10;None;0.00;0;0;0;0;0;'I';None;3
+'Logo';'I';17.60;0.60;42.30;16.70;None;0.00;0;0;0;0;0;'I';'logo';2
+'MEMBRETE1';'T';43.40;6.20;111.40;11.20;'Arial';10.00;0;0;0;0;0;'I';'';2
+'MEMBRETE2';'T';43.40;11.60;111.40;16.60;'Arial';10.00;0;0;0;0;0;'I';'';2
+'dias01';'T';124.50;48.90;146.70;53.90;'Arial';10;False;False;False;0;16777215;'L';'';0
+'factura01';'T';37.60;49.00;59.80;54.00;'Arial';10;False;False;False;0;16777215;'L';'';0
+'fecha01';'T';63.50;48.90;85.70;53.90;'Arial';10;False;False;False;0;16777215;'L';'';0
+'monto01';'T';157.40;49.00;186.20;54.00;'Arial';10;False;False;False;0;16777215;'L';'';0
+'page';'T';163.10;0.90;209.30;5.90;'Arial';6;False;False;False;0;16777215;'L';'page';0
+'proveedor.l';'T';18.30;40.30;36.30;46.30;'Arial';10.00;0;0;0;0;0;'l';'Proveedor: ';0
+'proveedor.l_copy';'T';17.30;251.50;45.30;257.50;'Arial';10.00;0;0;0;0;0;'l';'Subtotal Proveedor: ';0
+'proveedor.l_copy_copy';'T';23.40;259.60;51.40;265.60;'Arial';10.00;0;0;0;0;0;'l';'Total General: ';0
+'proveedor.nombre';'T';37.80;40.60;177.80;46.60;'Arial';10.00;0;0;0;0;65535;'I';None;0
+'some_name';'T';40.90;34.10;56.50;39.10;'Arial';12;False;False;False;0;16777215;'L';'Fact. Nro';0
+'some_name_copy';'T';68.40;34.40;84.00;39.40;'Arial';12;False;False;False;0;16777215;'L';'Fecha';0
+'some_name_copy_copy';'T';93.20;34.40;112.80;39.40;'Arial';12;False;False;False;0;16777215;'l';'Vencimiento';0
+'some_name_copy_copy_copy';'T';123.40;34.40;146.60;39.40;'Arial';12;False;False;False;0;16777215;'l';'Nro. Dias Venc.';0
+'some_name_copy_copy_copy_copy';'T';160.10;34.30;183.30;39.30;'Arial';12;False;False;False;0;16777215;'l';'Monto';0
+'vencimiento01';'T';92.00;49.00;114.20;54.00;'Arial';10;False;False;False;0;16777215;'L';'';0

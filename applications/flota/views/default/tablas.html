@@ -1,0 +1,20 @@
+{{left_sidebar_enabled=right_sidebar_enabled=True}}
+{{block left_sidebar}}Nuevo Contenido Extendido del Left SIderbar{{end}}
+
+{{extend 'layout.html'}}
+
+<h1>TAblas2</h1>
+
+{{if 'message' in globals():}}
+
+<hr/>
+<h2>{{=T("Tablas")}}</h2>
+
+{{else:}}
+
+{{=form}}
+
+{{=BEAUTIFY(response._vars)}}
+{{pass}}
+
+

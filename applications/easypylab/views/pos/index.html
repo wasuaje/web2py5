@@ -1,0 +1,131 @@
+{{extend 'layout.html'}}
+
+   <div class="post greenboxtools" id="tools">			
+			
+			{{=tools}}
+															
+	</div>
+	 <div class="post greenboxmesa" id="mesatit">
+			<div class="title">
+				<h1>Mesa </h1>
+			</div>
+			<div class="entry" id="mesa">
+				<center><h1>{{=session.mesa['codigo']}}</h1></center>
+			</div>
+	</div>
+	
+   <div class="post greenboxcat" id="category">
+			<div class="title">
+				<h1>Categorias</h1>
+			</div>
+			
+			{{=cats}}
+															
+	</div>	
+
+<div class="post greenboxtic" id="ticket">
+			<div class="title">
+				<h1>Ticket actual</h1>
+			</div>
+			<table id="list10"></table> <div id="pager10"></div>			
+			<input type="BUTTON" id="bedata" value="Borrar" />			
+			<div id="tots">
+ 			 {{=prb}}
+		   </div>		
+			
+</div>	
+
+
+  <div class="post greenboxprod" id="producto">
+			<div class="title">
+				<h1>Productos</h1>
+			</div>
+	      <div id="prods">
+ 			{{=prods}}
+		</div>			
+   </div>			
+	
+ <div id="modulos"  class="post greenbox">
+        
+   </div>
+   
+<script type="text/javascript">
+jQuery("#list10").jqGrid({ 
+		url:'{{=URL('pos','get_ticket_data')}}', 
+		datatype: "json", 
+		height:200,
+		colNames:['id','Codigo','Nombre','Cant.','Importe', 'Total'], 
+		colModel:[ {name:'id',index:'id', width:20},  
+			 {name:'codigo',index:'codigo', width:25,},
+			 {name:'nombre',index:'nombre', width:200}, 
+			 {name:'cantidad',index:'cantidad', width:35}, 
+			 {name:'importe',index:'importe', width:69}, 			
+			 {name:'total',index:'total', width:69}, 						  
+			 ], 	   		
+		rowNum:10	, 		
+		rowList:[10,20,30], 
+		pager: '#pager10', 
+		sortname: 'id', 
+		viewrecords: true, 		
+		sortorder: "desc", 
+		multiselect: false           		
+		 });
+jQuery("#list10").jqGrid('navGrid','#pager10',{add:false,edit:false,del:false,search:true}); 
+
+updateGridTotals();
+
+$("#bedata").click(function(){
+   var gr = jQuery("#list10").jqGrid('getGridParam','selrow'); 					  
+   if( gr != null )    	 {
+	$.ajax({url:"{{=URL('pos','handle_items')}}",
+				data:{'id_orden_det':gr, 'action':'Delete' },
+				type: "GET",
+				dataType: "html",
+				success: function (res) {
+				$("#tots").html($(res)).fadeIn('slow');
+								}
+				})	 ;   
+	
+	 $("#list10").trigger("reloadGrid"); 	 
+	 }
+   else {
+     alert("Please Select Row");}
+	  });
+
+$("#bedata2").click(function(){   
+	window.location.href = '{{=URL('producto','handle')}}';
+}) ;
+
+function updateGridTotals(){
+	
+		$.ajax({url:"{{=URL('pos','grid_totals')}}",				
+				type: "GET",
+				dataType: "html",
+				success: function (res) {
+				$("#tots").html($(res)).fadeIn('slow');
+								}
+				})	 ;   
+
+}
+
+
+function showTools(){
+	
+		$.ajax({url:"{{=URL('pos','tools')}}",				
+				type: "GET",
+				dataType: "html",
+				success: function (res) {
+				$("#tools").html($(res)).fadeIn('slow');
+								}
+				})	 ;   
+
+}
+
+// usar esto para recargar el grid luego de un insert o algo
+//$("#list10").trigger("reloadGrid"); 
+</script>
+
+
+<script type="text/javascript">
+ajax('{{=URL('pos','handle_items', vars={'id_prod':0, 'add':False } )}}' , 'tots');   
+</script>
